@@ -1,0 +1,31 @@
+cd "C:\Users\Manik\Downloads\Business Analytics\Industrial\Assignment\"
+use "arrest1.dta", clear
+browse
+sum
+describe
+browse
+label var state "state of arrest (fips code)"
+label var year "year of arrest"
+label var off "offense (FBI Code)"
+label var rage "age group 14=20-4; 15=25-9; ... ;21=55-59."
+label var educm "average education"
+label var dropm "percent high school drop-out"
+label var crime "log of arrest rate"
+label var blackm "percentage black"
+label var obsm "cell size"
+browse
+label var work_age "Legal work age per state"
+browse
+browse
+g lnoff=ln(off)
+g lneducm=ln(educm)
+g lnblackm=ln(blackm)
+g lnrage=ln(rage)
+g lncrime=ln(crime)
+reg lncrime lneducm lnblackm lnrage lnoff
+rvfplot
+predict resid, residuals
+histogram resid, kdensity normal
+ssc  install jb
+jb resid
+estat hettest

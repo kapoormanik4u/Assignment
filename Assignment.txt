@@ -1,0 +1,16 @@
+Assessment Data: description
+********************************************************
+The variables used are
+state: state of arrest (fips code)
+year : year of arrest
+off  : offense (FBI code)
+rage  : age group 14=20-4; 15=25-9; ... ;21=55-59.
+educm : average education
+dropm : percent high school drop-out
+crime  : log of arrest rate
+blackm : percent black
+obsm   : cell size
+yearat14 : year in which the respondent was 14 years old
+ca9  : dummy equal 1 if compulsory schooling is equal 9
+ca10 : dummy equal 1 if compulsory schooling is equal 10
+ca11 : dummy equal 1 if compulsory schooling is 11 or more
